@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Superhero Database</title>
+    <style>
+        /* Add some basic styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+            cursor: pointer;
+        }
+        img {
+            width: 50px;
+            height: 50px;
+        }
+        #controls {
+            margin-bottom: 20px;
+        }
+        #pagination button {
+            margin: 0 2px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="controls">
+    <label for="pageSize">Results per page:</label>
+    <select id="pageSize">
+        <option value="10">10</option>
+        <option value="20" selected>20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+        <option value="all">All results</option>
+    </select>
+    <input type="text" id="searchInput" placeholder="Search by name..." />
+</div>
+
+<table>
+    <thead>
+        <tr>
+            <th>Icon</th>
+            <th data-column="name">Name</th>
+            <th data-column="fullName">Full Name</th>
+            <th data-column="power">Powerstats</th>
+            <th data-column="race">Race</th>
+            <th data-column="gender">Gender</th>
+            <th data-column="height">Height</th>
+            <th data-column="weight">Weight</th>
+            <th data-column="placeOfBirth">Place of Birth</th>
+            <th data-column="alignment">Alignment</th>
+        </tr>
+    </thead>
+    <tbody id="heroTableBody">
+        <!-- Rows will be dynamically injected here -->
+    </tbody>
+</table>
+
+<div id="pagination"></div>
+
+<script src="index.js"></script>
+</body>
+</html>
